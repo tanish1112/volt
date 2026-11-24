@@ -1,0 +1,1 @@
+const assert=require('node:assert/strict');const {solve}=require('./engine.js');let v=solve('V1 in 0 12\nR1 in mid 1000\nR2 mid 0 2000');assert(Math.abs(v.volt.mid-8)<1e-9);assert(Math.abs(v.balance)<1e-10);v=solve('I1 0 a .01\nR1 a 0 1000');assert(Math.abs(v.volt.a-10)<1e-9);assert.throws(()=>solve('R1 a b 1000'));console.log('VOLT smoke tests passed');
